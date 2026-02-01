@@ -1,0 +1,48 @@
+﻿# Django
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.env.local
+.env.*.local
+
+# Database
+*.sqlite3
+*.db
+
+# Media files
+media/
+!media/.gitkeep
+
+# Static files (собираются при деплое)
+staticfiles/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+*.egg-info/
+dist/
+build/
+
+# Logs
+*.log
+logs/
+
+# Temp
+tmp/
+temp/
+
+# Django secret key
+secret_key.txt

@@ -1,0 +1,263 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}Корзина покупок - AntiksHub{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 style="margin: 0;">🛒 Корзина покупок</h1>
+    </div>
+    
+    <p>Здесь собраны все товары, которые вы выбрали для покупки. Проверьте состав заказа перед оформлением.</p>
+</div>
+
+<div class="card">
+    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 style="margin: 0;">📋 Содержимое корзины</h2>
+        <div style="font-size: 1.2em; font-weight: bold; color: var(--orange-primary);">
+            Итого: <span style="font-size: 1.5em;">45,899 ₽</span>
+        </div>
+    </div>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Товар</th>
+                <th>Цена</th>
+                <th>Количество</th>
+                <th>Сумма</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B35, #FF8E53); 
+                                    border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                            <span style="font-size: 2em;">📱</span>
+                        </div>
+                        <div>
+                            <div style="font-weight: bold;">Смартфон Orange X2026</div>
+                            <div style="color: var(--gray-medium); font-size: 0.9em;">
+                                Продавец: <strong>prodam_vse</strong>
+                            </div>
+                            <div style="color: var(--gray-medium); font-size: 0.9em;">
+                                На складе: <span style="color: #4CAF50;">15 шт.</span>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td style="font-weight: bold; color: var(--orange-primary);">
+                    32,999 ₽
+                </td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <button style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid #ddd; 
+                                      background: white; cursor: pointer;">-</button>
+                        <span style="font-weight: bold;">1</span>
+                        <button style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid #ddd; 
+                                      background: white; cursor: pointer;">+</button>
+                    </div>
+                </td>
+                <td style="font-weight: bold; font-size: 1.1em;">
+                    32,999 ₽
+                </td>
+                <td>
+                    <button class="btn" style="padding: 5px 10px; background: #f44336; border: none;">
+                        ❌ Удалить
+                    </button>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #2196F3, #1976D2); 
+                                    border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                            <span style="font-size: 2em;">📚</span>
+                        </div>
+                        <div>
+                            <div style="font-weight: bold;">Книга "Django для профессионалов"</div>
+                            <div style="color: var(--gray-medium); font-size: 0.9em;">
+                                Продавец: <strong>knigi_online</strong>
+                            </div>
+                            <div style="color: var(--gray-medium); font-size: 0.9em;">
+                                На складе: <span style="color: #4CAF50;">42 шт.</span>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td style="font-weight: bold; color: var(--orange-primary);">
+                    2,450 ₽
+                </td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <button style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid #ddd; 
+                                      background: white; cursor: pointer;">-</button>
+                        <span style="font-weight: bold;">2</span>
+                        <button style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid #ddd; 
+                                      background: white; cursor: pointer;">+</button>
+                    </div>
+                </td>
+                <td style="font-weight: bold; font-size: 1.1em;">
+                    4,900 ₽
+                </td>
+                <td>
+                    <button class="btn" style="padding: 5px 10px; background: #f44336; border: none;">
+                        ❌ Удалить
+                    </button>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FFA726, #FB8C00); 
+                                    border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                            <span style="font-size: 2em;">👕</span>
+                        </div>
+                        <div>
+                            <div style="font-weight: bold;">Оранжевая футболка AntiksHub</div>
+                            <div style="color: var(--gray-medium); font-size: 0.9em;">
+                                Продавец: <strong>brend_odezhda</strong>
+                            </div>
+                            <div style="color: var(--gray-medium); font-size: 0.9em;">
+                                На складе: <span style="color: #4CAF50;">28 шт.</span>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td style="font-weight: bold; color: var(--orange-primary);">
+                    1,999 ₽
+                </td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <button style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid #ddd; 
+                                      background: white; cursor: pointer;">-</button>
+                        <span style="font-weight: bold;">4</span>
+                        <button style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid #ddd; 
+                                      background: white; cursor: pointer;">+</button>
+                    </div>
+                </td>
+                <td style="font-weight: bold; font-size: 1.1em;">
+                    7,996 ₽
+                </td>
+                <td>
+                    <button class="btn" style="padding: 5px 10px; background: #f44336; border: none;">
+                        ❌ Удалить
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 20px; border-top: 2px solid #eee;">
+        <div>
+            <div style="color: var(--gray-medium);">Товаров: <strong>3</strong></div>
+            <div style="color: var(--gray-medium);">Общее количество: <strong>7 шт.</strong></div>
+        </div>
+        
+        <div style="text-align: right;">
+            <div style="font-size: 1.2em; color: var(--gray-medium);">
+                Сумма: <span style="font-size: 1.5em; font-weight: bold; color: var(--orange-primary);">45,895 ₽</span>
+            </div>
+            <div style="color: var(--gray-medium); font-size: 0.9em;">
+                Доставка: <span style="color: #4CAF50;">Бесплатно</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>🚚 Оформление заказа</h2>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <div>
+            <h3>📦 Доставка</h3>
+            <div style="margin-top: 15px;">
+                <label style="display: block; margin-bottom: 10px;">
+                    <input type="radio" name="delivery" checked> Курьерская доставка (1-2 дня)
+                </label>
+                <label style="display: block; margin-bottom: 10px;">
+                    <input type="radio" name="delivery"> Пункт выдачи (3-5 дней)
+                </label>
+                <label style="display: block; margin-bottom: 10px;">
+                    <input type="radio" name="delivery"> Почта России (5-14 дней)
+                </label>
+            </div>
+        </div>
+        
+        <div>
+            <h3>💳 Оплата</h3>
+            <div style="margin-top: 15px;">
+                <label style="display: block; margin-bottom: 10px;">
+                    <input type="radio" name="payment" checked> Банковская карта
+                </label>
+                <label style="display: block; margin-bottom: 10px;">
+                    <input type="radio" name="payment"> Электронные деньги
+                </label>
+                <label style="display: block; margin-bottom: 10px;">
+                    <input type="radio" name="payment"> Наложенный платеж
+                </label>
+            </div>
+        </div>
+        
+        <div>
+            <h3>👤 Данные получателя</h3>
+            <div style="margin-top: 15px;">
+                <input type="text" placeholder="ФИО" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                <input type="text" placeholder="Адрес доставки" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                <input type="tel" placeholder="Телефон" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 30px;">
+        <button class="btn" style="padding: 15px 40px; font-size: 1.2em;">
+            🚀 Оформить заказ на 45,895 ₽
+        </button>
+        <p style="margin-top: 10px; color: var(--gray-medium); font-size: 0.9em;">
+            Нажимая кнопку, вы соглашаетесь с условиями покупки
+        </p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>🎁 Рекомендуем добавить</h2>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+        <div style="text-align: center; padding: 15px; border: 1px solid #eee; border-radius: 10px;">
+            <div style="font-size: 2em;">🎧</div>
+            <div style="font-weight: bold;">Наушники</div>
+            <div style="color: var(--orange-primary); font-weight: bold;">3,499 ₽</div>
+            <button class="btn" style="padding: 5px 15px; margin-top: 10px;">➕ Добавить</button>
+        </div>
+        
+        <div style="text-align: center; padding: 15px; border: 1px solid #eee; border-radius: 10px;">
+            <div style="font-size: 2em;">🔋</div>
+            <div style="font-weight: bold;">Power Bank</div>
+            <div style="color: var(--orange-primary); font-weight: bold;">2,199 ₽</div>
+            <button class="btn" style="padding: 5px 15px; margin-top: 10px;">➕ Добавить</button>
+        </div>
+        
+        <div style="text-align: center; padding: 15px; border: 1px solid #eee; border-radius: 10px;">
+            <div style="font-size: 2em;">📦</div>
+            <div style="font-weight: bold;">Чехол для телефона</div>
+            <div style="color: var(--orange-primary); font-weight: bold;">899 ₽</div>
+            <button class="btn" style="padding: 5px 15px; margin-top: 10px;">➕ Добавить</button>
+        </div>
+        
+        <div style="text-align: center; padding: 15px; border: 1px solid #eee; border-radius: 10px;">
+            <div style="font-size: 2em;">🎁</div>
+            <div style="font-weight: bold;">Подарочная упаковка</div>
+            <div style="color: var(--orange-primary); font-weight: bold;">299 ₽</div>
+            <button class="btn" style="padding: 5px 15px; margin-top: 10px;">➕ Добавить</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

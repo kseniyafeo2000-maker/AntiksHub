@@ -1,0 +1,190 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}Пользователи - AntiksHub{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="margin: 0;">👥 Пользователи AntiksHub</h1>
+        <a href="/admin/auth/user/add/" class="btn">
+            👤 Добавить пользователя
+        </a>
+    </div>
+    
+    <p>Управление пользователями маркетплейса. Здесь вы можете просматривать всех зарегистрированных 
+       покупателей и продавцов, а также управлять их профилями.</p>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>📈 Статистика пользователей</h2>
+    </div>
+    
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div>👥</div>
+            <div class="stat-number">{{ total_users|default:"152" }}</div>
+            <div>Всего пользователей</div>
+        </div>
+        
+        <div class="stat-card">
+            <div>🛍️</div>
+            <div class="stat-number">{{ total_buyers|default:"120" }}</div>
+            <div>Покупателей</div>
+        </div>
+        
+        <div class="stat-card">
+            <div>👨‍💼</div>
+            <div class="stat-number">{{ total_sellers|default:"32" }}</div>
+            <div>Продавцов</div>
+        </div>
+        
+        <div class="stat-card">
+            <div>⭐</div>
+            <div class="stat-number">4.8/5</div>
+            <div>Средний рейтинг</div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>📋 Список пользователей</h2>
+    </div>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Пользователь</th>
+                <th>Тип</th>
+                <th>Email</th>
+                <th>Телефон</th>
+                <th>Баланс</th>
+                <th>Дата регистрации</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #FF6B35, #FF8E53); 
+                                    border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                            A
+                        </div>
+                        <div>
+                            <div><strong>admin</strong></div>
+                            <div style="font-size: 0.9em; color: var(--gray-medium);">Администратор</div>
+                        </div>
+                    </div>
+                </td>
+                <td><span class="badge badge-blue">Администратор</span></td>
+                <td>admin@antikshub.ru</td>
+                <td>+7 (XXX) XXX-XX-XX</td>
+                <td style="font-weight: bold; color: var(--orange-primary);">∞ ₽</td>
+                <td>01.01.2026</td>
+                <td>
+                    <a href="/admin/auth/user/1/change/" class="btn" style="padding: 5px 10px; font-size: 0.9em;">
+                        ✏️ Редактировать
+                    </a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>2</td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #4CAF50, #45a049); 
+                                    border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                            П
+                        </div>
+                        <div>
+                            <div><strong>prodam_vse</strong></div>
+                            <div style="font-size: 0.9em; color: var(--gray-medium);">Популярный продавец</div>
+                        </div>
+                    </div>
+                </td>
+                <td><span class="badge badge-orange">Продавец</span></td>
+                <td>seller@example.ru</td>
+                <td>+7 (999) 123-45-67</td>
+                <td style="font-weight: bold; color: #4CAF50;">152,450 ₽</td>
+                <td>15.01.2026</td>
+                <td>
+                    <a href="/admin/auth/user/2/change/" class="btn" style="padding: 5px 10px; font-size: 0.9em;">
+                        ✏️ Редактировать
+                    </a>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>3</td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #2196F3, #1976D2); 
+                                    border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                            И
+                        </div>
+                        <div>
+                            <div><strong>ivan_pokupatel</strong></div>
+                            <div style="font-size: 0.9em; color: var(--gray-medium);">Активный покупатель</div>
+                        </div>
+                    </div>
+                </td>
+                <td><span class="badge badge-green">Покупатель</span></td>
+                <td>ivan@mail.ru</td>
+                <td>+7 (987) 654-32-10</td>
+                <td style="font-weight: bold; color: var(--orange-primary);">5,230 ₽</td>
+                <td>20.01.2026</td>
+                <td>
+                    <a href="/admin/auth/user/3/change/" class="btn" style="padding: 5px 10px; font-size: 0.9em;">
+                        ✏️ Редактировать
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>🎯 Типы пользователей</h2>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <div style="background: #e8f5e9; padding: 20px; border-radius: 10px;">
+            <h3 style="color: #2e7d32;">🛍️ Покупатели</h3>
+            <p>Пользователи, которые приобретают товары на маркетплейсе. Имеют доступ к каталогу товаров, корзине и истории заказов.</p>
+            <ul style="margin-left: 20px;">
+                <li>Просмотр и покупка товаров</li>
+                <li>Управление корзиной</li>
+                <li>Отслеживание заказов</li>
+                <li>Оставление отзывов</li>
+            </ul>
+        </div>
+        
+        <div style="background: #fff3e0; padding: 20px; border-radius: 10px;">
+            <h3 style="color: #ef6c00;">👨‍💼 Продавцы</h3>
+            <p>Пользователи, которые размещают и продают товары. Имеют доступ к управлению товарами, заказами и статистике.</p>
+            <ul style="margin-left: 20px;">
+                <li>Добавление и редактирование товаров</li>
+                <li>Управление заказами покупателей</li>
+                <li>Просмотр статистики продаж</li>
+                <li>Вывод средств</li>
+            </ul>
+        </div>
+        
+        <div style="background: #e3f2fd; padding: 20px; border-radius: 10px;">
+            <h3 style="color: #1565c0;">⚙️ Администраторы</h3>
+            <p>Управляют всей платформой. Имеют полный доступ ко всем функциям системы.</p>
+            <ul style="margin-left: 20px;">
+                <li>Управление пользователями</li>
+                <li>Модерация товаров и заказов</li>
+                <li>Настройка системы</li>
+                <li>Просмотр общей статистики</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

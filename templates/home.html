@@ -1,0 +1,111 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}Главная - AntiksHub{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 style="margin: 0;">🚀 Добро пожаловать в AntiksHub!</h1>
+    </div>
+    
+    <p>AntiksHub — это современный маркетплейс 2026 года с уникальной оранжевой темой. 
+       Наша платформа объединяет покупателей и продавцов в удобной и безопасной среде.</p>
+    
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div>🛍️</div>
+            <div class="stat-number">{{ total_products|default:"0" }}</div>
+            <div>Товаров в каталоге</div>
+        </div>
+        
+        <div class="stat-card">
+            <div>👥</div>
+            <div class="stat-number">{{ total_users|default:"0" }}</div>
+            <div>Пользователей</div>
+        </div>
+        
+        <div class="stat-card">
+            <div>📦</div>
+            <div class="stat-number">{{ total_orders|default:"0" }}</div>
+            <div>Заказов выполнено</div>
+        </div>
+        
+        <div class="stat-card">
+            <div>⭐</div>
+            <div class="stat-number">100%</div>
+            <div>Довольных клиентов</div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>🎯 Особенности AntiksHub</h2>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <div>
+            <h3>🛍️ Для покупателей</h3>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Широкий выбор товаров по выгодным ценам</li>
+                <li>Быстрая и надежная доставка</li>
+                <li>Система рейтингов и отзывов</li>
+                <li>Удобная корзина покупок</li>
+                <li>Безопасные платежи</li>
+            </ul>
+        </div>
+        
+        <div>
+            <h3>👨‍💼 Для продавцов</h3>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Простая регистрация и настройка магазина</li>
+                <li>Удобное управление товарами и заказами</li>
+                <li>Подробная статистика продаж</li>
+                <li>Система выплат без комиссии</li>
+                <li>Поддержка 24/7</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="/products/" class="btn" style="margin-right: 10px;">
+            🛍️ Начать покупки
+        </a>
+        <a href="/admin/" class="btn btn-outline">
+            ⚙️ Панель управления
+        </a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>📈 Как начать?</h2>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
+        <div>
+            <div style="font-size: 2em;">1️⃣</div>
+            <h3>Регистрация</h3>
+            <p>Создайте аккаунт покупателя или продавца</p>
+        </div>
+        
+        <div>
+            <div style="font-size: 2em;">2️⃣</div>
+            <h3>Выбор товаров</h3>
+            <p>Найдите нужные товары в каталоге</p>
+        </div>
+        
+        <div>
+            <div style="font-size: 2em;">3️⃣</div>
+            <h3>Оформление заказа</h3>
+            <p>Добавьте товары в корзину и оформите заказ</p>
+        </div>
+        
+        <div>
+            <div style="font-size: 2em;">4️⃣</div>
+            <h3>Получение</h3>
+            <p>Получите товар и оставьте отзыв</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

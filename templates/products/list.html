@@ -1,0 +1,111 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}Каталог товаров - AntiksHub{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="margin: 0;">🛍️ Каталог товаров</h1>
+        <a href="/admin/products/product/add/" class="btn">
+            ➕ Добавить товар
+        </a>
+    </div>
+    
+    <p>На этой странице представлены все товары, доступные для покупки на маркетплейсе AntiksHub.</p>
+    
+    {% if products %}
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-top: 30px;">
+        {% for product in products %}
+        <div class="card" style="padding: 20px; margin: 0;">
+            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #FF6B35, #FF8E53); 
+                        border-radius: 10px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 3em;">
+                    {% if product.category.name == '📱 Электроника' %}📱
+                    {% elif product.category.name == '👕 Одежда' %}👕
+                    {% elif product.category.name == '📚 Книги' %}📚
+                    {% elif product.category.name == '🏠 Дом и сад' %}🏠
+                    {% elif product.category.name == '🎮 Игры' %}🎮
+                    {% else %}🛍️{% endif %}
+                </span>
+            </div>
+            
+            <h3>{{ product.name }}</h3>
+            
+            <p style="color: #666; font-size: 0.9em; margin: 10px 0;">
+                <span style="background: #FFE0B2; color: #E65100; padding: 4px 12px; border-radius: 20px;">
+                    {{ product.category.name|default:"Без категории" }}
+                </span>
+                <span style="margin-left: 10px;">📦 {{ product.stock }} шт.</span>
+            </p>
+            
+            <p style="margin: 10px 0; height: 60px; overflow: hidden;">
+                {{ product.description|truncatewords:20 }}
+            </p>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                <div>
+                    <div style="font-size: 1.5em; font-weight: bold; color: #FF6B35;">
+                        {{ product.price }} ₽
+                    </div>
+                    <div style="font-size: 0.9em; color: #666;">
+                        Продавец: {{ product.seller.username }}
+                    </div>
+                </div>
+                
+                <button class="btn" style="padding: 8px 16px;">
+                    🛒 В корзину
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div style="text-align: center; padding: 40px; color: #666;">
+        <div style="font-size: 4em;">😢</div>
+        <h3>Товаров пока нет</h3>
+        <p>Но вы можете добавить первый товар прямо сейчас!</p>
+        <a href="/admin/products/product/add/" class="btn" style="margin-top: 20px;">
+            ➕ Добавить первый товар
+        </a>
+    </div>
+    {% endif %}
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>📊 Статистика товаров</h2>
+    </div>
+    
+    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+        <thead>
+            <tr style="background: #FFE0B2;">
+                <th style="padding: 15px; text-align: left;">Категория</th>
+                <th style="padding: 15px; text-align: left;">Количество товаров</th>
+                <th style="padding: 15px; text-align: left;">Средняя цена</th>
+                <th style="padding: 15px; text-align: left;">Общее количество</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 15px;">📱 Электроника</td>
+                <td style="padding: 15px;">{{ products.count }} шт.</td>
+                <td style="padding: 15px;">
+                    {% if products %}
+                        {% widthratio products.0.price 1 1 %} ₽
+                    {% else %}
+                        0 ₽
+                    {% endif %}
+                </td>
+                <td style="padding: 15px;">
+                    {% if products %}
+                        {{ products.0.stock }} шт.
+                    {% else %}
+                        0 шт.
+                    {% endif %}
+                </td>
+            </tr>
+            <!-- Можно добавить больше строк статистики -->
+        </tbody>
+    </table>
+</div>
+{% endblock %}

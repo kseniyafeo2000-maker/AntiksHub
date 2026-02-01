@@ -1,0 +1,269 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}Мои заказы - AntiksHub{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 style="margin: 0;">📦 Мои заказы</h1>
+    </div>
+    
+    <p>Здесь вы можете отслеживать статус ваших заказов, просматривать историю покупок и управлять возвратами.</p>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>📊 Общая статистика</h2>
+    </div>
+    
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div>📦</div>
+            <div class="stat-number">12</div>
+            <div>Всего заказов</div>
+        </div>
+        
+        <div class="stat-card">
+            <div>✅</div>
+            <div class="stat-number">8</div>
+            <div>Завершено</div>
+        </div>
+        
+        <div class="stat-card">
+            <div>🚚</div>
+            <div class="stat-number">2</div>
+            <div>В доставке</div>
+        </div>
+        
+        <div class="stat-card">
+            <div>💰</div>
+            <div class="stat-number">127,450 ₽</div>
+            <div>Всего потрачено</div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>📋 Активные заказы</h2>
+    </div>
+    
+    <div style="display: grid; gap: 20px;">
+        <div style="border: 1px solid #eee; border-radius: 10px; padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <div>
+                    <h3 style="margin: 0;">Заказ #ANT2026-001</h3>
+                    <div style="color: var(--gray-medium); font-size: 0.9em;">
+                        Оформлен: 25.01.2026 • Сумма: <strong>45,895 ₽</strong>
+                    </div>
+                </div>
+                <div>
+                    <span class="badge badge-orange">🚚 В доставке</span>
+                    <div style="margin-top: 5px; color: var(--gray-medium); font-size: 0.9em;">
+                        Ожидается: 28.01.2026
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div>
+                    <div style="font-weight: bold; color: var(--gray-medium);">Товары:</div>
+                    <ul style="margin-left: 20px; margin-top: 5px;">
+                        <li>Смартфон Orange X2026 (1 шт.)</li>
+                        <li>Книга "Django для профессионалов" (2 шт.)</li>
+                        <li>Оранжевая футболка AntiksHub (4 шт.)</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <div style="font-weight: bold; color: var(--gray-medium);">Доставка:</div>
+                    <div style="margin-top: 5px;">
+                        <div>Курьерская служба</div>
+                        <div>Москва, ул. Примерная, д. 1</div>
+                        <div>+7 (999) 123-45-67</div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div style="font-weight: bold; color: var(--gray-medium);">Оплата:</div>
+                    <div style="margin-top: 5px;">
+                        <div>💳 Банковская карта •••• 1234</div>
+                        <div>Статус: <span style="color: #4CAF50;">Оплачено</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
+                <button class="btn" style="padding: 8px 16px; margin-right: 10px;">
+                    📞 Связаться с продавцом
+                </button>
+                <button class="btn btn-outline" style="padding: 8px 16px;">
+                    🗺️ Отследить заказ
+                </button>
+            </div>
+        </div>
+        
+        <div style="border: 1px solid #eee; border-radius: 10px; padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <div>
+                    <h3 style="margin: 0;">Заказ #ANT2026-002</h3>
+                    <div style="color: var(--gray-medium); font-size: 0.9em;">
+                        Оформлен: 20.01.2026 • Сумма: <strong>15,299 ₽</strong>
+                    </div>
+                </div>
+                <div>
+                    <span class="badge badge-blue">⚙️ В обработке</span>
+                    <div style="margin-top: 5px; color: var(--gray-medium); font-size: 0.9em;">
+                        Готовится к отправке
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div>
+                    <div style="font-weight: bold; color: var(--gray-medium);">Товары:</div>
+                    <ul style="margin-left: 20px; margin-top: 5px;">
+                        <li>Умные часы SmartWatch Pro (1 шт.)</li>
+                        <li>Зарядное устройство (1 шт.)</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <div style="font-weight: bold; color: var(--gray-medium);">Продавец:</div>
+                    <div style="margin-top: 5px;">
+                        <div>prodam_vse</div>
+                        <div>Рейтинг: ⭐⭐⭐⭐⭐ (4.9)</div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div style="font-weight: bold; color: var(--gray-medium);">Статус оплаты:</div>
+                    <div style="margin-top: 5px;">
+                        <div>💳 Банковская карта</div>
+                        <div>Статус: <span style="color: #4CAF50;">Оплачено</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>📜 История заказов</h2>
+    </div>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Номер заказа</th>
+                <th>Дата</th>
+                <th>Товары</th>
+                <th>Сумма</th>
+                <th>Статус</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>#ANT2025-125</strong></td>
+                <td>15.12.2025</td>
+                <td>Ноутбук, Наушники</td>
+                <td>89,999 ₽</td>
+                <td><span class="badge badge-green">✅ Доставлен</span></td>
+                <td>
+                    <button class="btn" style="padding: 5px 10px; font-size: 0.9em;">
+                        📝 Оставить отзыв
+                    </button>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>#ANT2025-124</strong></td>
+                <td>10.12.2025</td>
+                <td>Книги (3 шт.)</td>
+                <td>4,299 ₽</td>
+                <td><span class="badge badge-green">✅ Доставлен</span></td>
+                <td>
+                    <button class="btn" style="padding: 5px 10px; font-size: 0.9em;">
+                        📦 Повторить заказ
+                    </button>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>#ANT2025-123</strong></td>
+                <td>05.12.2025</td>
+                <td>Футболки (2 шт.)</td>
+                <td>3,998 ₽</td>
+                <td><span class="badge badge-green">✅ Доставлен</span></td>
+                <td>
+                    <button class="btn" style="padding: 5px 10px; font-size: 0.9em;">
+                        🔄 Возврат
+                    </button>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>#ANT2025-122</strong></td>
+                <td>28.11.2025</td>
+                <td>Аксессуары</td>
+                <td>7,450 ₽</td>
+                <td><span class="badge badge-green">✅ Доставлен</span></td>
+                <td>
+                    <button class="btn" style="padding: 5px 10px; font-size: 0.9em;">
+                        📝 Отзыв
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>🔄 Возвраты и обмены</h2>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <div style="background: #fff3e0; padding: 20px; border-radius: 10px;">
+            <h3 style="color: #ef6c00;">📦 Условия возврата</h3>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Возврат в течение 14 дней с момента получения</li>
+                <li>Товар должен быть в оригинальной упаковке</li>
+                <li>Отсутствие следов использования</li>
+                <li>Наличие всех документов</li>
+            </ul>
+        </div>
+        
+        <div style="background: #e8f5e9; padding: 20px; border-radius: 10px;">
+            <h3 style="color: #2e7d32;">🔄 Процесс обмена</h3>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Подача заявки на обмен</li>
+                <li>Проверка товара продавцом</li>
+                <li>Отправка нового товара</li>
+                <li>Получение замены</li>
+            </ul>
+        </div>
+        
+        <div style="background: #e3f2fd; padding: 20px; border-radius: 10px;">
+            <h3 style="color: #1565c0;">💰 Возврат денег</h3>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Обработка 3-5 рабочих дней</li>
+                <li>Возврат на карту до 10 дней</li>
+                <li>Уведомление по email/SMS</li>
+                <li>Поддержка 24/7</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 30px;">
+        <button class="btn" style="padding: 12px 30px;">
+            📄 Создать заявку на возврат
+        </button>
+        <p style="margin-top: 10px; color: var(--gray-medium);">
+            Или обратитесь в поддержку по телефону: +7 (XXX) XXX-XX-XX
+        </p>
+    </div>
+</div>
+{% endblock %}
